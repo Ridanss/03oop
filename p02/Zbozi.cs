@@ -50,7 +50,14 @@ namespace p02
             string chain = nazev + "; ";
             if (cena == 0) chain += "neprodejné; ";
             else chain += cena + "; ";
-            chain += datumVyroby.ToString("d") + "; " + dniTrvanlivosti + "; " + MinTrvanlivostDny().ToString();
+            chain += datumVyroby.ToString("d") + "; " + dniTrvanlivosti + "; ";
+            int daysLeft = MinTrvanlivostDny();
+            if (daysLeft < 0)
+            {
+                daysLeft = Math.Abs(daysLeft);
+                chain += "trvanlivost je překročena o " + daysLeft + " dní";
+            }
+            else chain += daysLeft;
             return chain;
         }
     }
