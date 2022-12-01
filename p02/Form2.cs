@@ -16,5 +16,18 @@ namespace p02
         {
             InitializeComponent();
         }
+
+        private void buttonExecute_Click(object sender, EventArgs e)
+        {
+            string[] vyrobek;
+
+            for(int i = 0; i < textBox1.Lines.Count(); i++)
+            {
+                vyrobek = textBox1.Lines[i].Split(';');
+                Zbozi zbozi = new Zbozi(vyrobek[0], double.Parse(vyrobek[1]), DateTime.Parse(vyrobek[2]), int.Parse(vyrobek[3]));
+                listBox1.Items.Add(zbozi.Vypis());
+
+            }
+        }
     }
 }
