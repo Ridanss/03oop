@@ -20,6 +20,7 @@ namespace p02
         private void buttonExecute_Click(object sender, EventArgs e)
         {
             string[] vyrobek;
+            listBox1.Items.Clear();
 
             for(int i = 0; i < textBox1.Lines.Count(); i++)
             {

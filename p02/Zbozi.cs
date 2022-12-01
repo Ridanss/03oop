@@ -40,13 +40,13 @@ namespace p02
             int timeleft = MinTrvanlivostDny();
             if (timeleft < -10) price = 0;
             else if (timeleft < 0) price *= 0.5;
-            else if (timeleft <= 3)price *= 0.25;
-            this.cena = price;
+            else if (timeleft <= 3)price *= 0.75;
+            cena = price;
         }
 
         public string Vypis()
         {
-
+            NovaCena();
             string chain = nazev + "; ";
             if (cena == 0) chain += "neprodejné; ";
             else chain += cena + "; ";
