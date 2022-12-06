@@ -17,16 +17,25 @@ namespace p03
 
         public int PocetSlov()
         {
-            bool slovo = false;
+            bool slovo = true;
             int pocetSlov = 0;
 
             for (int i = 0; i < veta.Length; i++)
             {
+
                 if (char.IsLetter(veta[i]) || char.IsDigit(veta[i]))
+                {
+                    if (slovo)
+                    {
+                        pocetSlov++;
+                        slovo = false;
+                    }
+                }
+
+                else if (veta[i] == ' ')
                 {
                     slovo = true;
                 }
-                else if (veta[i] == ' ' && veta[i++] == ' ') slovo = false;
 
             }
             return pocetSlov;
@@ -39,7 +48,15 @@ namespace p03
 
         public void Smaz(char target)
         {
-            veta.Replace(target, char.MinValue);
+            int i = 0;
+            while (i < veta.Length)
+            {
+                if (veta[i] == target)
+                {
+                    veta = veta.Remove(i, 1);
+                }
+                else i++;
+            }
         }
     }
 }

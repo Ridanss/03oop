@@ -19,12 +19,17 @@ namespace p03
 
         private void buttonExecute_Click(object sender, EventArgs e)
         {
-            labelVypis.Text = "výpis: ";
+            labelVypis1.Text = "1. výpis: ";
+            labelVypis2.Text = "2. výpis: ";
             labelWordCount.Text = "počet slov: ";
             Retez chain = new Retez(textBox1.Text);
-            labelVypis.Text += chain.Vypis();
+            labelVypis1.Text += chain.Vypis();
             labelWordCount.Text += chain.PocetSlov().ToString();
-
+            if (char.TryParse(textBox2.Text, out char smaz))
+            {
+                chain.Smaz(smaz);
+                labelVypis2.Text += chain.Vypis();
+            }
         }
     }
 }

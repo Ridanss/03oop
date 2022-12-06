@@ -30,8 +30,11 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonExecute = new System.Windows.Forms.Button();
-            this.labelVypis = new System.Windows.Forms.Label();
+            this.labelVypis1 = new System.Windows.Forms.Label();
             this.labelWordCount = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelVypis2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -52,31 +55,59 @@
             this.buttonExecute.UseVisualStyleBackColor = true;
             this.buttonExecute.Click += new System.EventHandler(this.buttonExecute_Click);
             // 
-            // labelVypis
+            // labelVypis1
             // 
-            this.labelVypis.AutoSize = true;
-            this.labelVypis.Location = new System.Drawing.Point(47, 81);
-            this.labelVypis.Name = "labelVypis";
-            this.labelVypis.Size = new System.Drawing.Size(34, 13);
-            this.labelVypis.TabIndex = 2;
-            this.labelVypis.Text = "výpis:";
+            this.labelVypis1.AutoSize = true;
+            this.labelVypis1.Location = new System.Drawing.Point(47, 132);
+            this.labelVypis1.Name = "labelVypis1";
+            this.labelVypis1.Size = new System.Drawing.Size(46, 13);
+            this.labelVypis1.TabIndex = 2;
+            this.labelVypis1.Text = "1. výpis:";
             // 
             // labelWordCount
             // 
             this.labelWordCount.AutoSize = true;
-            this.labelWordCount.Location = new System.Drawing.Point(47, 111);
+            this.labelWordCount.Location = new System.Drawing.Point(47, 193);
             this.labelWordCount.Name = "labelWordCount";
             this.labelWordCount.Size = new System.Drawing.Size(59, 13);
             this.labelWordCount.TabIndex = 3;
             this.labelWordCount.Text = "počet slov:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(96, 85);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(57, 20);
+            this.textBox2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 26);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "smazat:\r\n(znak)";
+            // 
+            // labelVypis2
+            // 
+            this.labelVypis2.AutoSize = true;
+            this.labelVypis2.Location = new System.Drawing.Point(47, 156);
+            this.labelVypis2.Name = "labelVypis2";
+            this.labelVypis2.Size = new System.Drawing.Size(46, 13);
+            this.labelVypis2.TabIndex = 7;
+            this.labelVypis2.Text = "2. výpis:";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelVypis2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.labelWordCount);
-            this.Controls.Add(this.labelVypis);
+            this.Controls.Add(this.labelVypis1);
             this.Controls.Add(this.buttonExecute);
             this.Controls.Add(this.textBox1);
             this.Name = "Form3";
@@ -90,8 +121,11 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonExecute;
-        private System.Windows.Forms.Label labelVypis;
+        private System.Windows.Forms.Label labelVypis1;
         private System.Windows.Forms.Label labelWordCount;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelVypis2;
     }
 }
 
