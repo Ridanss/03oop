@@ -33,13 +33,13 @@ namespace p05
 
         public Retez(string veta)
         {
-            this.Veta = veta;
+            Veta = veta;
             cislo = 1;
         }
 
         public Retez(string veta, int cislo)
         {
-            this.Veta = veta;
+            Veta = veta;
             this.cislo = cislo;
         }
 
