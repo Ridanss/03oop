@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,20 @@ namespace p05
         private string veta;
 
         private int cislo;
+
+        public string Veta
+        {
+            get
+            {
+                return veta;
+            }
+            set
+            {
+                string chain = veta.Substring(1, veta.Length - 1);
+                char first = char.ToUpper(veta[0]);
+                veta = first.ToString() + chain;
+            }
+        }
 
         public Retez(string veta)
         {
@@ -27,7 +42,7 @@ namespace p05
 
         public override string ToString()
         {
-            return veta;
+            return Veta;
         }
 
         public void Zkrat()
@@ -39,11 +54,10 @@ namespace p05
             for (int i = 0; i < veta.Length; i++)
             {
 
-                if (char.IsLetter(veta[i]) || char.IsDigit(veta[i]))
+                if (char.IsLetter(Veta[i]) || char.IsDigit(Veta[i]))
                 {
                     if (slovo)
                     {
-                        pocetSlov++;
                         if (pocetSlov <= cislo)
                         {
                             
@@ -52,7 +66,7 @@ namespace p05
                     }
                 }
 
-                else if (veta[i] == ' ')
+                else if (Veta[i] == ' ')
                 {
                     slovo = true;
                 }
