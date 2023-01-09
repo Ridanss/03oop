@@ -22,21 +22,24 @@ namespace p05
             }
             set
             {
-                string chain = veta.Substring(1, veta.Length - 1);
-                char first = char.ToUpper(veta[0]);
-                veta = first.ToString() + chain;
+                veta = value;
+                if (veta != null)
+                {
+                    veta = veta.Substring(0, 1).ToUpper() + veta.Substring(1);
+                    if (veta[veta.Length - 1] != '.') veta += '.';
+                }
             }
         }
 
         public Retez(string veta)
         {
-            this.veta = veta;
+            this.Veta = veta;
             cislo = 1;
         }
 
         public Retez(string veta, int cislo)
         {
-            this.veta = veta;
+            this.Veta = veta;
             this.cislo = cislo;
         }
 
@@ -45,33 +48,13 @@ namespace p05
             return Veta;
         }
 
-        public void Zkrat()
+        public string Zkrat()
         {
-            bool slovo = true;
-            int pocetSlov = 0;
-            string chain = string.Empty;
+            string[] pole = Veta.Split(' ');
+            pole = pole.Take(cislo).ToArray();
 
-            for (int i = 0; i < veta.Length; i++)
-            {
-
-                if (char.IsLetter(Veta[i]) || char.IsDigit(Veta[i]))
-                {
-                    if (slovo)
-                    {
-                        if (pocetSlov <= cislo)
-                        {
-                            
-                        }
-                        slovo = false;
-                    }
-                }
-
-                else if (Veta[i] == ' ')
-                {
-                    slovo = true;
-                }
-
-            }
+            Veta = string.Join(" ", pole);
+            return Veta;
             
         }
 

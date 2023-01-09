@@ -16,5 +16,15 @@ namespace p05
         {
             InitializeComponent();
         }
+
+        private void buttonExecute_Click(object sender, EventArgs e)
+        {
+            labelVysl.Text = "výsledek:\n";
+            Retez veta = new Retez(textBox1.Text, int.Parse(textBox2.Text));
+            veta.Zkrat();
+            labelVysl.Text += veta.ToString();
+
+            
+        }
     }
 }
