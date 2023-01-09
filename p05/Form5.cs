@@ -21,6 +21,10 @@ namespace p05
         {
             labelVysl.Text = "výsledek:\n";
             Retez veta = new Retez(textBox1.Text, int.Parse(textBox2.Text));
+            MessageBox.Show(veta.ToString());
+            Retez veta2 = new Retez(textBox1.Text);
+            veta2.Zkrat();
+            MessageBox.Show(veta2.ToString());
             veta.Zkrat();
             labelVysl.Text += veta.ToString();
 
