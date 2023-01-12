@@ -16,5 +16,35 @@ namespace p06
         {
             InitializeComponent();
         }
+
+        private void buttonExecute_Click(object sender, EventArgs e)
+        {
+            textBoxName.Clear();
+            textBoxSurname.Clear();
+            textBoxBirth.Clear();
+            List<Student> person = new List<Student>();
+            person.Add(new Student("Karel", "Pavloň", DateTime.Parse("3.4.2004"), 1));
+            person.Add(new Student("Daniel", "Nováček", DateTime.Parse("23.1.2005"), 5));
+            person.Add(new Student("Šimon", "Dočkal", DateTime.Parse("10.10.2004"), 6));
+            person.Add(new Student("Vojtěch", "Dolák", DateTime.Parse("1.4.2005"), 2));
+            person.Add(new Student("Weedeg", "Novotný", DateTime.Parse("4.1.2004"), 0));
+            person.Add(new Student("Radim", "Pokorný", DateTime.Parse("25.4.2004"), 1));
+
+            int count = 0;
+            int sum = 0;
+            double average;
+            foreach(Student student in person)
+            {
+                if (student.Vek() >= 18) listBox1.Items.Add(student);
+
+                if (student.Znamka != 0)
+                {
+                    count++;
+                    sum += student.Znamka;
+                }
+            }
+            average = sum / (double)count;
+            MessageBox.Show("Průměr klasifikovaných studentů je " + average.ToString());
+        }
     }
 }
