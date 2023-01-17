@@ -38,7 +38,7 @@ namespace p06
             }
         }
 
-        private int znamka;
+        public int znamka;
 
         public int Znamka
         {
@@ -75,7 +75,7 @@ namespace p06
 
         public override string ToString()
         {
-            return string.Format($"{Jmeno} {Prijmeni}, {DatumNarozeni.ToString("d")}");
+            return string.Format($"{Jmeno} {Prijmeni}, {DatumNarozeni.ToString("d")}, známka je {Znamka}");
         }
     }
 }

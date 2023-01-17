@@ -31,19 +31,16 @@ namespace p06
             person.Add(new Student("Radim", "Pokorný", DateTime.Parse("25.4.2004"), 1));
 
             int count = 0;
-            int sum = 0;
+            double sum = 0;
             double average;
             foreach(Student student in person)
             {
-                if (student.Vek() >= 18) listBox1.Items.Add(student);
+                if (student.Vek() >= 18) listBox1.Items.Add(student.ToString());
 
-                if (student.Znamka != 0)
-                {
-                    count++;
-                    sum += student.Znamka;
-                }
+                if (student.znamka != 0) count++;
+                sum += student.znamka;
             }
-            average = sum / (double)count;
+            average = sum / count;
             MessageBox.Show("Průměr klasifikovaných studentů je " + average.ToString());
         }
     }
