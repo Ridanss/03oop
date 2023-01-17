@@ -14,31 +14,41 @@ namespace p07
 
         private string spz;
 
-        private int nosnost; //v tunach
+        private double nosnost; //v tunach
 
-        public int HmotnostNakladu { get; private set; } //v tunach
+        public double HmotnostNakladu { get; private set; } //v tunach
 
-        public NakladniAuto(string spz, int nosnost)
+        public NakladniAuto(string spz, double nosnost)
         {
             this.spz = spz;
             this.nosnost = nosnost;
             HmotnostNakladu = 0;
         }
 
-        public int NalozNaklad(int naklad)
+        public void NalozNaklad(double nalozit)
         {
-            if (naklad < nosnost - HmotnostNakladu) HmotnostNakladu += naklad;
+            double misto = nosnost - HmotnostNakladu;
+            if (nalozit <= misto) HmotnostNakladu += nalozit;
             else
             {
-                int rozdil = nosnost - HmotnostNakladu;
-                naklad -= rozdil;
-                HmotnostNakladu += naklad;
-                MessageBox.Show(String.Format($"{rozdil} tun nebylo naloženo"));
+                nalozit -= misto;
+                HmotnostNakladu += misto;
+
+
+                MessageBox.Show(String.Format($"{nalozit} tun nebylo naloženo"));
             }
         }
 
-        public int VylozNaklad()
+        public void VylozNaklad(double vylozit)
         {
+            if (vylozit <= HmotnostNakladu) HmotnostNakladu -= vylozit;
+            else
+            {
+                double chybi = vylozit - HmotnostNakladu;
+                HmotnostNakladu = 0;
+
+                MessageBox.Show(string.Format($"{chybi} tun chybí"));
+            }
 
         }
 
