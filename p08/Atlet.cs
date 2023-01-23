@@ -24,7 +24,8 @@ namespace p08
             {
                 if (!char.IsUpper(value[0]))
                 {
-                    jmeno = value;
+                    jmeno = char.ToUpper(value[0]).ToString();
+                    jmeno += value.Substring(1);
                    
                     
                 }
@@ -39,25 +40,31 @@ namespace p08
 
         public void Behej(int km)
         {
-            for (int i = 0; i < km; i++)
+            if (km * 10 < (200 - unava))
             {
-                if (unava <= 190) unava += 10;
-                else
-                {
-                    MessageBox.Show("Atlet je příliš unavený");
-                    continue;
-                }
+                unava += km * 10;
+                MessageBox.Show($"Únava atleta {Jmeno} je {unava}");
+            }
+            else if (km != 0)
+            {
+                unava = 200;
+                MessageBox.Show("Atlet je příliš unavený");
             }
         }
 
         public void Spi(int hodin)
         {
-            for (int i = 0; i < hodin; i++)
+            if (hodin == 1 && unava >= 100)
             {
-                if (unava >= 100) unava -= 100;
-                else if (unava < 100 && unava > 0) unava = 0;
-                else continue;
+                unava -= 100;
+                MessageBox.Show($"Únava atleta {Jmeno} je {unava}");
             }
+            else if (hodin != 0)
+            {
+                unava = 0;
+                MessageBox.Show($"Únava atleta {Jmeno} je {unava}");
+            }
+                
         }
 
         public void ZjistitUnavu()
