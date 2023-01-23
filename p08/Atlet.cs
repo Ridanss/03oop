@@ -10,7 +10,7 @@ namespace p08
     internal class Atlet
     {
 
-        private int unava = 0;
+        private int unava;
 
         private string jmeno;
 
@@ -36,6 +36,7 @@ namespace p08
         public Atlet(string name)
         {
             Jmeno = name;
+            unava = 0;
         }
 
         public void Behej(int km)
